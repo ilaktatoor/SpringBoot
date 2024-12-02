@@ -35,7 +35,7 @@ public class ProductosController {
     // update
     @PutMapping
     public ResponseEntity<Producto> update(Producto producto){
-        return ResponseEntity.status(HttpStatus.OK).body(service.save(producto));
+        return ResponseEntity.status(HttpStatus.OK).body(service.update(producto));
     }
     // delete
     @DeleteMapping

@@ -1,6 +1,7 @@
 package com.stdevsec.Inventario.service;
 
 import com.stdevsec.Inventario.entity.Inventario;
+import com.stdevsec.Inventario.entity.Producto;
 import com.stdevsec.Inventario.repository.InventariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,11 +32,11 @@ public class InventariosService {
     }
 
     // Edit producto en inventario
-    public void existenciasUpdate(Long id, Integer nuevaCantidad){
-        Optional<Inventario> inventarioOpt = repository.findById(id);
+    public void existenciasUpdate(Long id_producto, Integer nuevaCantidad){
+        Optional<Inventario> inventarioOpt = repository.findById(id_producto);
 
         if(inventarioOpt.isEmpty()){
-            throw new RuntimeException("Inventario con ID " + id + " no encontrado");
+            throw new RuntimeException("Inventario con ID " + id_producto + " no encontrado");
         }
 
         Inventario inventario = inventarioOpt.get();
